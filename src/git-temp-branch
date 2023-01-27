@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -eu
+
+# creates a git branch based on time stamp and switches to it
+
+if [ "${1-}" = "-h" ] || [ "${1-}" = "--help" ]; then
+    >&2 echo "git subcommand for local random branch generation"
+    >&2 echo "usage: git random-branch"
+    exit 0
+fi
+
+prefix=${1:-tmp}
+d=$(date +%Y-%m-%d-%H-%M)
+username="$(git config --global github.user || whoami)"
+branch="$prefix/$username/$d"
+
+git switch -c "$branch"
+echo "$branch" >> "$(git rev-parse --show-toplevel)/.git/random-branch-history.log"

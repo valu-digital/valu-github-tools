@@ -1,0 +1,55 @@
+#!/bin/sh
+
+set -eu
+
+if [ "$1" = "" ]; then
+    echo "usage: gh-upload-branch <branch-name>"
+    return 1
+fi
+
+(
+    set -eu
+
+    # Generate mostly unique branch name using your os username
+    local branch_name="tmp/$(whoami)/$1"
+    local force=""
+    local repository_name="$(basename $(git remote get-url origin) | tr -d ".git")"
+
+    if [ "$(git ls-remote --heads origin $branch_name)" != "" ]; then
+        echo "Branch $branch_name already exists."
+        echo "Will override the branch. Enter to continue or Ctrl+c to cancel"
+        read
+        force="--force"
+    fi
+
+    # Go to the git repository root
+    cd "$(git rev-parse --show-toplevel)"
+
+    # Stage all files for commit
+    git add .
+
+    # Commit em
+    git commit -m "tmp commit to branch $branch_name"
+
+    # save the commit hash
+    local rev="$(git rev-parse HEAD)"
+
+    # push the commit
+    git push origin $force "HEAD:$branch_name"
+
+    # Remove the commit from the local git
+    # eg. this reverts git to state before this command was executed
+    git reset HEAD^
+
+    # Generate copy/pastable link
+    local url="https://github.com/$repository_name/commit/$rev"
+
+    # Copy it to the macos clipboard
+    echo "$url" | pbcopy
+
+    echo
+    echo
+    echo "  Copied to clipboard:"
+    echo "      $url"
+    echo
+)
