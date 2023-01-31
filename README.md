@@ -1,11 +1,29 @@
 # valu-github-tools
 
-Git(hub) helpers
+Git(hub) helpers and project practices
 
 Credits to:
 [Valu Digital](https://github.com/valu-digital)
 [Esa-Matti Suuronen](https://github.com/esamattis)
 
-## Community Users
+## .gitignore
 
-Although these are open source we are not resourced enough to properly support "community users" – those not working for Valu Digital. You are free to use these helpers and even open issues here, but it is very likely that we don't have the time and resources to act on them. Same goes for PRs. Feel free to hard fork the repository and tweak it to your needs.
+Keep your git repo clean.
+
+## Prettier
+
+Code formatting tool [docs](https://prettier.io/docs/en/index.html)
+
+Installing it to project and enabling format on save makes writing
+standardized code efforless.
+
+## Jest
+
+Test suite [docs](https://jestjs.io/docs/getting-started)
+
+## Scripts
+
+Git(hub) helpers/shortcuts to speed up your workflow
+Some examples in `src/scripts/*`
+
+## Typescript
