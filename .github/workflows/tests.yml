@@ -1,9 +1,5 @@
 name: Test
 
-concurrency:
-    group: "test-${{ github.ref }}"
-    cancel-in-progress: true
-
 on:
     pull_request:
         paths:
@@ -16,7 +12,7 @@ on:
 
 jobs:
     test:
-        timeout-minutes: 10
+        timeout-minutes: 2
         runs-on: ubuntu-latest
         steps:
             - name: Install deps
