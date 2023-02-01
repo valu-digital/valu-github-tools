@@ -16,8 +16,6 @@ Keep your secrets outside of git.
 Descriptive function and variable names make code
 easier to read and understand.
 
-Good naming remove the need to comment the code. (almost)
-
 ```ts
 const p = "Erkki Esimerkki";
 const a = 179;
@@ -38,7 +36,7 @@ console.log(`${person} bmi = ${bmi}`);
 
 ## Commenting
 
-Good comment does not explain what is being done, but why.
+Good comment does not explain what is being done, but why something is done.
 
 ```ts
 // weight divided by height squared
@@ -55,7 +53,7 @@ weight / Math.pow(height, 2);
 Code formatting tool [docs](https://prettier.io/docs/en/index.html)
 
 Installing it to project and enabling format on save makes writing
-standardized code efforless.
+standardized code effortless.
 
 ## Jest
 
