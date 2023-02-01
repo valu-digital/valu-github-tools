@@ -9,6 +9,7 @@ Credits to:
 ## .gitignore
 
 Keep your git repo clean.
+Keep your secrets outside of git.
 
 ## Naming
 
