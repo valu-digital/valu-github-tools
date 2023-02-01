@@ -1,8 +1,7 @@
 {
     "name": "valu-github-tools",
     "version": "0.0.1",
-    "description": "Github \"tools\" we use daily",
-    "main": "index.js",
+    "description": "Github \"tools\" and practices we use daily",
     "scripts": {
         "test": "jest"
     },
