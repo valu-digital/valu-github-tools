@@ -10,6 +10,45 @@ Credits to:
 
 Keep your git repo clean.
 
+## Naming
+
+Descriptive function and variable names make code
+easier to read and understand.
+
+Good naming remove the need to comment the code. (almost)
+
+```ts
+const p = "Erkki Esimerkki";
+const a = 179;
+const b = 82;
+const c = b / Math.pow(a, 2);
+
+console.log(p + " bmi = " + c);
+
+// vs.
+
+const person = "Erkki Esimerkki";
+const height = 179;
+const weight = 82;
+const bmi = weight / Math.pow(height, 2);
+
+console.log(`${person} bmi = ${bmi}`);
+```
+
+## Commenting
+
+Good comment does not explain what is being done, but why.
+
+```ts
+// weight divided by height squared
+weight / Math.pow(height, 2);
+
+// vs.
+
+// body mass index formula
+weight / Math.pow(height, 2);
+```
+
 ## Prettier
 
 Code formatting tool [docs](https://prettier.io/docs/en/index.html)
@@ -27,3 +66,6 @@ Git(hub) helpers/shortcuts to speed up your workflow
 Some examples in `src/scripts/*`
 
 ## Typescript
+
+Like strongly typed javascript.
+Makes writing maintainable code easier.
