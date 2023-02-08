@@ -3,3 +3,7 @@ test("example test", () => {
     var multiplier = "3"
     expect(number * multiplier).toBe(36);
 });
+
+test("Onko Arska karu", () => {
+    expect("Karu Arska").toBeTruthy();
+})
