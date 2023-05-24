@@ -7,3 +7,8 @@ test("example test", () => {
 test("Onko Arska karu", () => {
     expect("Karu Arska").toBeTruthy();
 })
+
+test("failing test", () => {
+    var number = 123;
+    expect(number).toBeGreaterThan(124);
+})
